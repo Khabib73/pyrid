@@ -1,9 +1,10 @@
 [project]
 name = "pyrid"
 version = "0.1.0"
-description = ""
+description = "Simple linter for Python"
+keywords = ["linter", "python"]
 authors = [
-    {name = "Khabib",email = "136262760+Khabib73@users.noreply.github.com"}
+    {name = "Khabib Shakhbanov",email = "136262760+Khabib73@users.noreply.github.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.14"
@@ -16,3 +17,9 @@ packages = [{include = "pyrid", from = "src"}]
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.urls]
+Homepage = "https://github.com/Khabib73/pyrid"
+Documentation = "https://github.com/Khabib73/pyrid#readme"
+Repository = "https://github.com/Khabib73/pyrid"
+Issues = "https://github.com/Khabib73/pyrid/issues"
