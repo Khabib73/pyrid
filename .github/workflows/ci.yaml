@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.14
+
+      - name: install poetry
+        run: pip install poetry
+
+      - name: install dependencies
+        run: poetry install --with dev
+
+      - name: run ruff check
+        run: poetry run ruff check .
+
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.14
+
+      - name: install poetry
+        run: pip install poetry
+
+      - name: install dependencies
+        run: poetry install --with dev
+
+      - name: run ruff format
+        run: poetry run ruff format --check .
+
+
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.14
+
+      - name: install poetry
+        run: pip install poetry
+
+      - name: install dependencies
+        run: poetry install --with dev
+
+      - name: run tests
+        run: poetry run pytest

@@ -4,15 +4,26 @@ version = "0.1.0"
 description = "Simple linter for Python"
 keywords = ["linter", "python"]
 authors = [
-    {name = "Khabib Shakhbanov",email = "136262760+Khabib73@users.noreply.github.com"}
+    {name = "Khabib Shakhbanov"}
 ]
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = [
-]
+
+packages = [{ include = "pyrid", from = "src" }]
 
 [tool.poetry]
 packages = [{include = "pyrid", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.14"
+pytest = "^9.0.3"
+
+[tool.poetry.group.dev]
+optional = true
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.15.4"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -23,3 +34,13 @@ Homepage = "https://github.com/Khabib73/pyrid"
 Documentation = "https://github.com/Khabib73/pyrid#readme"
 Repository = "https://github.com/Khabib73/pyrid"
 Issues = "https://github.com/Khabib73/pyrid/issues"
+
+[tool.poetry.scripts]
+pyrid = "pyrid.__main__:main"
+
+[project.scripts]
+pyrid = "pyrid.__main__:main"
+
+
+[tool.ruff.lint]
+select = ["N", "UP", "I", "F", "E"] 
