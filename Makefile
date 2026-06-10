@@ -10,3 +10,7 @@ format:
 .PHONY: check_format
 check_format:
 	poetry run ruff format --check .
+
+.PHONY: test
+test:
+	poetry run pytest .
