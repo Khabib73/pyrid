@@ -45,3 +45,6 @@ pyrid = "pyrid.__main__:main"
 
 [tool.ruff.lint]
 select = ["N", "UP", "I", "F", "E"] 
+
+[tool.mypy]
+python_version = "3.14"
