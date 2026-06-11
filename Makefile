@@ -14,3 +14,7 @@ check_format:
 .PHONY: test
 test:
 	poetry run pytest .
+
+.PHONY: typecheck
+typecheck:
+	poetry run mypy src/
