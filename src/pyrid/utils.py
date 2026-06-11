@@ -4,7 +4,12 @@ import os
 from pyrid.colors import cyan, green, red, yellow
 
 
-def format_mutable_msg(path: str, node: ast.AST, type_name: str, func_name: str) -> str:
+def format_mutable_msg(
+    path: str,
+    node: ast.FunctionDef | ast.AsyncFunctionDef,
+    type_name: str,
+    func_name: str,
+) -> str:
     """
     Args:
         path (str): The path to the file.

@@ -62,3 +62,21 @@ jobs:
 
       - name: run tests
         run: poetry run pytest
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.14
+
+      - name: install poetry
+        run: pip install poetry
+
+      - name: install dependencies
+        run: poetry install --with dev
+
+      - name: run mypy
+        run: poetry run mypy src/
