@@ -2,7 +2,7 @@ import argparse
 import ast
 import sys
 
-from pyrid.mutable_defaults import check_file as md_check
+from pyrid.mutable_defaults import mutable_checks
 from pyrid.utils import read_code, search_files
 
 
@@ -23,7 +23,7 @@ def main() -> None:
     for file in files:
         try:
             tree = ast.parse(read_code(file))
-            errors += md_check(tree, file)
+            errors += mutable_checks(tree, file)
         except SyntaxError:
             print(f"SyntaxError in {file}")
 
