@@ -22,9 +22,7 @@ def _make_func(defaults: list[ast.expr]) -> ast.FunctionDef:
 
 
 def test_has_mutable_default_list_true():
-    assert check(
-        _make_func([ast.List(elts=[ast.Constant(value=1)])])
-    ) == ["List"]
+    assert check(_make_func([ast.List(elts=[ast.Constant(value=1)])])) == ["List"]
 
 
 def test_has_mutable_default_dict_true():
@@ -36,16 +34,12 @@ def test_has_mutable_default_dict_true():
 
 
 def test_has_mutable_default_set_true():
-    assert check(_make_func([ast.Set(elts=[ast.Constant(value=1)])])) == [
-        "Set"
-    ]
+    assert check(_make_func([ast.Set(elts=[ast.Constant(value=1)])])) == ["Set"]
 
 
 def test_has_mutable_default_tuple_false():
     assert (
-        check(
-            _make_func([ast.Tuple(elts=[ast.Constant(value=1)], ctx=ast.Load())])
-        )
+        check(_make_func([ast.Tuple(elts=[ast.Constant(value=1)], ctx=ast.Load())]))
         == []
     )
 
@@ -60,9 +54,7 @@ def test_has_mutable_default_tuple_false():
 )
 def test_has_mutable_default_call_true(func_name: str, expected: list[str]):
     assert (
-        check(
-            _make_func([ast.Call(func=ast.Name(id=func_name, ctx=ast.Load()))])
-        )
+        check(_make_func([ast.Call(func=ast.Name(id=func_name, ctx=ast.Load()))]))
         == expected
     )
 
