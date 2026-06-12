@@ -1,7 +1,8 @@
 import ast
 
 from pyrid.enums import MutableType
-from pyrid.utils import format_mutable_msg
+
+from .utils import format_mutable_msg
 
 AST_MUTABLE_TYPES = (
     ast.List,
