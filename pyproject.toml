@@ -16,7 +16,6 @@ packages = [{include = "pyrid", from = "src"}]
 
 [tool.poetry.dependencies]
 python = ">=3.14"
-pytest = "^9.0.3"
 
 [tool.poetry.group.dev]
 optional = true
@@ -25,6 +24,7 @@ optional = true
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.15.4"
 mypy = "^2.1.0"
+pytest = "^9.0.3"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
