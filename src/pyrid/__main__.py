@@ -2,7 +2,7 @@ import argparse
 import ast
 import sys
 
-from pyrid.mutable_defaults import check_file as md_check
+from pyrid.mutable_defaults import check as md_check
 from pyrid.utils import read_code, search_files
 
 
