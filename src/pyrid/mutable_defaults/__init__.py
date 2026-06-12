@@ -1,7 +1,5 @@
-from pyrid.mutable_defaults.md import check_file, has_mutable_default, is_mutable_class
+from pyrid.mutable_defaults.md import mutable_checks
 
 __all__ = [
-    "check_file",
-    "has_mutable_default",
-    "is_mutable_class",
+    "mutable_checks",
 ]
