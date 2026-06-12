@@ -2,7 +2,7 @@ import ast
 
 import pytest
 
-from pyrid.mutable_defaults.md import has_mutable_default
+from pyrid.mutable_defaults import has_mutable_default
 
 
 def _make_func(defaults: list[ast.expr]) -> ast.FunctionDef:
