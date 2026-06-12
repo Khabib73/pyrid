@@ -92,7 +92,7 @@ def has_mutable_default(
     return found
 
 
-def check_file(tree: ast.Module, path: str = "") -> int:
+def mutable_checks(tree: ast.Module, path: str = "") -> int:
     """
     Check an entire AST module for mutable defaults.
 
