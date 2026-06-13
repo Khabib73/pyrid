@@ -13,9 +13,9 @@ def has_docstring(node: FuncClassNode) -> bool:
     Args:
         node: The node to check.
     Returns:
-        bool: True if the node doesn't have a docstring, False otherwise.
+        bool: True if the node has a docstring, False otherwise.
     """
-    return ast.get_docstring(node) is None
+    return ast.get_docstring(node) is not None
 
 
 def is_func_or_class(node: ast.AST) -> TypeGuard[FuncClassNode]:
@@ -38,7 +38,7 @@ def is_missing_docstring(node: ast.AST) -> TypeGuard[FuncClassNode]:
         bool: True if the node is a FuncClassNode and doesn't have a docstring,
         False otherwise.
     """
-    return is_func_or_class(node) and has_docstring(node)
+    return is_func_or_class(node) and not has_docstring(node)
 
 
 def docstring_checks(tree: ast.Module, path: str = "") -> int:
