@@ -54,10 +54,11 @@ def resolve_rules(
     ignore: list[str] | None = None,
 ) -> set[str]:
 
+    active: set[str] = set()
+
     if not select:
         active = set(REGISTRY.keys())
     else:
-        active: set[str] = set()
         for code in select:
             if code in REGISTRY:
                 active.add(code)
