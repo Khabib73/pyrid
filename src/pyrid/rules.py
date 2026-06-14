@@ -44,6 +44,39 @@ REGISTRY: dict[str, Rule] = {
     ),
 }
 
+GROUP_MAP: dict[str, set[str]] = {
+    "D": {"D100", "D101", "D102", "D103"},
+}
+
+
+def resolve_rules(
+    select: list[str] | None = None,
+    ignore: list[str] | None = None,
+) -> set[str]:
+
+    if not select:
+        active = set(REGISTRY.keys())
+    else:
+        active: set[str] = set()
+        for code in select:
+            if code in REGISTRY:
+                active.add(code)
+            elif code in GROUP_MAP:
+                active.update(GROUP_MAP[code])
+            else:
+                raise ValueError(f"Unknown rule: {code}")
+
+    if ignore:
+        for code in ignore:
+            if code in REGISTRY:
+                active.discard(code)
+            elif code in GROUP_MAP:
+                active -= GROUP_MAP[code]
+            else:
+                raise ValueError(f"Unknown rule: {code}")
+
+    return active
+
 
 def get_rule(code: str) -> Rule:
     return REGISTRY[code]
