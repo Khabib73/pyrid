@@ -3,7 +3,7 @@ import ast
 from pyrid.docstring.rules import check_d100, check_d101, check_d102, check_d103
 
 from .utils import format_docstring_msg
-
+from pyrid.rules import GROUP_MAP
 
 class DocstringVisitor(ast.NodeVisitor):
     def __init__(self, path: str, active_rules: set[str]) -> None:
@@ -80,7 +80,7 @@ def docstring_checks(
         int: The number of errors found.
     """
     if active_rules is None:
-        active_rules = {"D100", "D101", "D102", "D103"}
+        active_rules = GROUP_MAP["D"]
     visitor = DocstringVisitor(path, active_rules)
     visitor.visit(tree)
     return visitor.errors
