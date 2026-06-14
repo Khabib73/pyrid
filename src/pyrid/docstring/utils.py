@@ -1,10 +1,12 @@
+import ast
+
 from pyrid.colors import green, red, yellow
 from pyrid.types import FuncClassNode
 
 
 def format_docstring_msg(
     path: str,
-    node: FuncClassNode,
+    node: FuncClassNode | ast.Module,
     func_name: str,
 ) -> str:
     """
@@ -16,6 +18,6 @@ def format_docstring_msg(
         str: The formatted message.
     """
     return (
-        f"{red('Required docstring not found')} in {yellow(path)}:{node.lineno}"
-        f"- name: {green(func_name)}"
+        f"{red('Required docstring not found')} in {yellow(path)}"
+        f":{getattr(node, 'lineno', 0)}- name: {green(func_name)}"
     )
