@@ -18,6 +18,6 @@ def format_docstring_msg(
         str: The formatted message.
     """
     return (
-        f"{red('Required docstring not found')} in {yellow(path)}:{getattr(node, 'lineno', 0)}"
-        f"- name: {green(func_name)}"
+        f"{red('Required docstring not found')} in {yellow(path)}"
+        f":{getattr(node, 'lineno', 0)}- name: {green(func_name)}"
     )
