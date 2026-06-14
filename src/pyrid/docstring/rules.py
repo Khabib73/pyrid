@@ -31,23 +31,23 @@ def check_d101(node: ast.ClassDef) -> bool:
 
 def check_d102(node: FuncNode) -> bool:
     """
-    Check that the function has a docstring.
+    Check that the class method has a docstring.
 
     Args:
-        node: The function node to check.
+        node: The class method node to check.
     Returns:
-        bool: True if the function has a docstring, False otherwise.
+        bool: True if the class method has a docstring, False otherwise.
     """
     return bool(ast.get_docstring(node))
 
 
 def check_d103(node: FuncNode) -> bool:
     """
-    Check that the class method has a docstring.
+    Check that the public function has a docstring
 
     Args:
         node: The function node to check.
     Returns:
-        bool: True if the class method has a docstring, False otherwise.
+        bool: True if the public function has a docstring, False otherwise.
     """
     return bool(ast.get_docstring(node))

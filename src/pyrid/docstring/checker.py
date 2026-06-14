@@ -36,7 +36,7 @@ class DocstringVisitor(ast.NodeVisitor):
 
     def visit_FunctionDef(self, node: ast.FunctionDef) -> None:
         """
-        Check D102: function has docstring
+        Check D102/D103: class method or public function has docstring
         """
         if self.in_class:
             if "D102" in self.active_rules and not check_d102(node):
@@ -51,7 +51,7 @@ class DocstringVisitor(ast.NodeVisitor):
 
     def visit_AsyncFunctionDef(self, node: ast.AsyncFunctionDef) -> None:
         """
-        Check D102: async function has docstring
+        Check D102/D103: async method or public async function has docstring
         """
         if self.in_class:
             if "D102" in self.active_rules and not check_d102(node):
