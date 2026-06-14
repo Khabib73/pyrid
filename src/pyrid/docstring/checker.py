@@ -1,9 +1,9 @@
 import ast
 
 from pyrid.docstring.rules import check_d100, check_d101, check_d102, check_d103
+from pyrid.rules import GROUP_MAP
 
 from .utils import format_docstring_msg
-from pyrid.rules import GROUP_MAP
 
 
 class DocstringVisitor(ast.NodeVisitor):
