@@ -1,4 +1,8 @@
-# pyrid — Simple Linter for Python
+<p align="center">
+  <img src="logo.svg" alt="pyrid">
+</p>
+
+
 
 [![Python](https://img.shields.io/badge/python-3.14+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
