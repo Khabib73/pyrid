@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" width="320" height="96" role="img" aria-label="pyrid">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&amp;display=swap');</style>
+  </defs>
+  <text
+    x="50%"
+    y="68"
+    text-anchor="middle"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-weight="700"
+    font-size="72"
+    letter-spacing="-2"
+    fill="#2C3EFF"
+  >pyrid</text>
+</svg>
