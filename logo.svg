@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" width="320" height="96" role="img" aria-label="pyrid">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" width="320" height="130" role="img" aria-label="pyrid">
   <defs>
-    <style>@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&amp;display=swap');</style>
+    <style>@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap');</style>
   </defs>
   <text
     x="50%"
@@ -12,4 +12,14 @@
     letter-spacing="-2"
     fill="#2C3EFF"
   >pyrid</text>
+  <text
+    x="50%"
+    y="98"
+    text-anchor="middle"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-weight="400"
+    font-size="16"
+    letter-spacing="1"
+    fill="#6B7280"
+  >Simple Linter for Python</text>
 </svg>
