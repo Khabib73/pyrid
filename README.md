@@ -1,4 +1,7 @@
-# ![pyrid](logo.svg)
+<p align="center">
+  <img src="logo.svg" alt="pyrid">
+</p>
+
 
 
 [![Python](https://img.shields.io/badge/python-3.14+-blue.svg)](https://www.python.org/)
