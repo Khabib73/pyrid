@@ -1,5 +1,6 @@
 import ast
 
+
 def _make_func(defaults: list[ast.expr]) -> ast.FunctionDef:
     """Create a function with the given defaults: def foo(x=default, ...)"""
     return ast.FunctionDef(
