@@ -79,6 +79,27 @@ class RuleRegistry:
 
         return active
 
+    def get_checkers(
+        self,
+        active_rules: set[str],
+    ) -> list[BaseChecker]:
+        """Return checkers that have at least one active rule.
+
+        Args:
+            active_rules: Set of active rule codes.
+
+        Returns:
+            List of ``BaseChecker`` instances whose rules intersect with
+            ``active_rules``.
+        """
+        result: list[BaseChecker] = []
+        for group, rule_codes in self._groups.items():
+            if rule_codes & active_rules:
+                checker = self._checkers[group]
+                checker.active_rules = active_rules
+                result.append(checker)
+        return result
+
     def get_rule(self, code: str) -> Rule:
         """Look up a single rule by its code.
 
