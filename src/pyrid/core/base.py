@@ -21,6 +21,7 @@ class BaseChecker(ABC):
     """
 
     code: str
+    active_rules: set[str] = set()
 
     @abstractmethod
     def get_rules(self) -> list[Rule]:
