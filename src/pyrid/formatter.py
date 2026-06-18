@@ -19,7 +19,6 @@ def format_violation(v: Violation) -> str:
 def format_violations(violations: list[Violation]) -> str:
     """Format a list of violations.
 
-    Sorts by path, line, and column. Returns a string with newline separators.
+    Expects a pre-sorted list. Returns a string with newline separators.
     """
-    sorted_vs = sorted(violations, key=lambda x: (x.path, x.line, x.column))
-    return "\n".join(format_violation(v) for v in sorted_vs)
+    return "\n".join(format_violation(v) for v in violations)
