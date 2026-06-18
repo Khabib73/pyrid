@@ -8,13 +8,24 @@ from pyrid.rules import resolve_rules
 from pyrid.utils import read_code, search_files
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser()
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    """Parse CLI arguments.
+
+    Args:
+        argv: Optional argument list (defaults to ``sys.argv[1:]``).
+
+    Returns:
+        Parsed namespace with ``path``, ``select``, and ``ignore`` attributes.
+    """
+    parser = argparse.ArgumentParser(
+        prog="pyrid",
+        description="Simple linter for Python",
+    )
     parser.add_argument(
         "path",
         nargs="?",
         default=".",
-        help="Path to directory containing python files",
+        help="Path to a Python file or directory to lint",
     )
     parser.add_argument(
         "--select",
@@ -26,8 +37,12 @@ def main() -> None:
         nargs="*",
         help="Rules or groups to disable (e.g. D101)",
     )
+    return parser.parse_args(argv)
 
-    args = parser.parse_args()
+
+def main() -> None:
+
+    args = parse_args()
     config = load_config()
 
     select = args.select or config.get("select")
