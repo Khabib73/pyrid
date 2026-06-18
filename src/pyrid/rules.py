@@ -1,7 +1,21 @@
 from collections.abc import Callable
 from dataclasses import dataclass
 
+from pyrid.core import RuleRegistry
 from pyrid.docstring.rules import check_d100, check_d101, check_d102, check_d103
+
+
+def create_registry() -> RuleRegistry:
+    """Create and populate the global rule registry.
+
+    Registers all built-in checkers and returns a ready-to-use
+    ``RuleRegistry`` instance.
+
+    Returns:
+        A ``RuleRegistry`` with all available checkers registered.
+    """
+    registry = RuleRegistry()
+    return registry
 
 
 @dataclass
